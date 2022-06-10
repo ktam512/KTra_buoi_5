@@ -1,9 +1,20 @@
 public class Main {
     public static void main(String[] args) {
-        String sum = "* ";
-        for (int i = 0;i<4;i++) {
-            System.out.println(sum);
-            sum +="* ";
-        }
+      String quote = "You only live once, but if you do it right, once is enough";
+      System.out.println("Số từ trong chuỗi là");
+      String[] words = quote.split("\\s+");
+      System.out.println(words.length);
+
+      int count = 0;
+      char Ochar = 'o';
+      for (int i =0;i<quote.length();i++) {
+          if (quote.charAt(i) == Ochar) {
+              count ++;
+              System.out.println("vị trí của o ở quote["+i+"]");
+          }
+      }
+      System.out.println("Số lần o xuất hiện là "+count+" lần");
+
+
     }
 }
