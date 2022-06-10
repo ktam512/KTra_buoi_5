@@ -1,0 +1,36 @@
+import java.util.regex.Pattern;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        String EMAIL_PATTERN =
+                "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
+        String NUMBER_PATTERN = "[0-9]{9,11}" ;
+        Scanner sc = new Scanner(System.in);
+
+        //Email
+        while (true) {
+            System.out.println("Điền email của bạn: ");
+            String email_input = sc.nextLine();
+            if (Pattern.matches(EMAIL_PATTERN,email_input) == false) {
+                System.out.println("Email của bạn chưa hợp lệ");
+
+            } else {
+                System.out.println("Email của bạn là "+email_input+" đã hợp lệ");
+                break;
+            }
+        }
+        //Số điện thoại
+        while (true) {
+            System.out.println("Điền số điện thoại của bạn: ");
+            String number_input = sc.nextLine();
+            if (Pattern.matches(NUMBER_PATTERN,number_input) == false) {
+                System.out.println("Số điện thoại của bạn chưa hợp lệ");
+
+            } else {
+                System.out.println("Số điện thoại của bạn là "+number_input+" đã hợp lệ");
+                break;
+            }
+        }
+
+    }
+}
