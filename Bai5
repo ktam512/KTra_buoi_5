@@ -1,0 +1,77 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int m;
+        int n;
+        Scanner sc = new Scanner(System.in);
+
+        do {
+            System.out.println("Nhập vào số dòng của mảng:");
+            m = sc.nextInt();
+            System.out.println("Nhập vào số cột của mảng:");
+            n = sc.nextInt();
+        } while (m < 1 || n < 1);
+
+        // khai báo mảng A có m dòng, n cột
+        int A[][] = new int[m][n];
+
+        System.out.println("Nhập các phần tử cho mảng A:");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print("A[" + i + "," + j + "] = ");
+                A[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Mảng A vừa nhập:");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(A[i][j] + "\t");
+            }
+            System.out.println("\n");
+        }
+        // in ra các phần tử đường chéo chính
+        System.out.println("Các phần tử nằm trên đường chéo chính là: ");
+        for (int i = 0; i < m || i < n; i++) {
+                System.out.println("A[" + i + "," + i + "] = "+ A[i][i]);
+            }
+
+        // Khai báo mảng B có m dòng, n cột giống A
+        int B[][] = new int[m][n];
+
+        System.out.println("Nhập các phần tử cho mảng B:");
+        for (int a = 0; a < m; a++) {
+            for (int b = 0; b < n; b++) {
+                System.out.print("B[" + a + "," + b + "] = ");
+                B[a][b] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Mảng B vừa nhập:");
+        for (int a = 0; a < m; a++) {
+            for (int b = 0; b < n; b++) {
+                System.out.print(B[a][b] + "\t");
+            }
+            System.out.println("\n");
+        }
+        // Cộng mảng A với mảng B được mảng C
+        int C[][] = new int[m][n];
+        //Công từng phần tử của A với B
+        for (int c = 0; c < m; c++) {
+            for (int d = 0; d < n; d++) {
+                int sum = A[c][d]+B[c][d];
+                System.out.println("C[" + c + "," + d + "] = " + sum);
+                C[c][d] = sum;
+            }
+        }
+        System.out.println("Mảng C sau khi cộng A với B là:");
+
+        for (int c = 0; c < m; c++) {
+            for (int d = 0; d < n; d++) {
+                System.out.print(C[c][d] + "\t");
+            }
+            System.out.println("\n");
+        }
+    }
+
+}
